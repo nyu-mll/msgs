@@ -9,7 +9,7 @@ We pretrain RoBERTa on smaller datasets (1M, 10M, 100M, 1B tokens). The pretrain
 
 We release 3 models with lowest perplexities for each pretraining data size out of 25 runs (or 10 in the case of 1B tokens).
 
-Hyperparameters and validation perplexities of pretrained data are published in Transformers Library. (Click [here](https://www.eeoc.gov/laws/) for more detailed model descriptions)
+Hyperparameters and validation perplexities of pretrained data are published in Transformers Library. (Click [here](https://huggingface.co/nyu-mll) for more detailed model descriptions)
 
 #### Finetuning
 
