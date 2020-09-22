@@ -90,7 +90,7 @@ For each mixed task we create 5k paradigms of data. paradigm example(Syn. positi
 
 We use `Train` data for finetuning and `Test` data to test model generalization. We also add different proportions(0.1%, 0.3%, 1.0%) of `Inoc.` data to training data.
 
-More details are provided in the [data page](tbd).
+More details are provided in the [data page](https://github.com/nyu-mll/RoBERTa-scale-down/blob/master/data).
 
 ### Model and Finetuning Tutorials
 
@@ -130,7 +130,7 @@ python ./examples/run_msgs.py \
     --output_dir #path/to/save/finetuned/models
 ```
 
-For model names you can check out our [model page](https://huggingface.co/nyu-mll) or download all files and specify the local directory. For task names please go to our [data page](tbd).
+For model names you can check out our [model page](https://huggingface.co/nyu-mll) or download all files and specify the local directory. For task names please go to our [data page](https://github.com/nyu-mll/RoBERTa-scale-down/blob/master/data).
 
 ### Citing
 
