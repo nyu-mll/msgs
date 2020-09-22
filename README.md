@@ -1,4 +1,4 @@
-# Learning What Matters: RoBERTa acquires helpful inductive biases from pretraining
+# Learning What Features Matter: RoBERTa acquires helpful inductive biases from pretraining
 The repo contains descriptions and implementations of the paper [Learning What Features Matter: RoBERTa acquires helpful inductive biases from pretraining](tbd). We investigate how robust generalization is acquired by RoBERTa models with different pretraining data sizes. We pretrain models on datasets of 4 pretraining data sizes, then test them on a synthetic dataset named Mixed Signals Generalization Set(MSGS).
 
 Sections
