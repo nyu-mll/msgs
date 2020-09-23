@@ -40,7 +40,7 @@ For other hyperparameters, we select:
 - Warmup Steps: 6% of max #steps
 - Dropout: 0.1
 
-An example of how to run the pretraining:
+#### An example of how to run the pretraining:
 
 To reproduce the pretraining of roberta-med-small-1M-1, use the following commands:
 ```
@@ -57,7 +57,11 @@ PEAK_LR=0.0005        # Peak learning rate, adjust as needed
 UPDATE_FREQ=8          # Increase the batch size 8x
 SAVE_DIR=miniberta_1M_reproduce_checkpoints
 
-python fairseq/fairseq_cli/train.py --fp16 $DATA_DIR     --task masked_lm --criterion masked_lm     --arch roberta_med_small --sample-break-mode complete --tokens-per-sample $TOKENS_PER_SAMPLE     --optimizer adam --adam-betas '(0.9,0.98)' --adam-eps 1e-6 --clip-norm 0.0     --lr-scheduler polynomial_decay --lr $PEAK_LR --warmup-updates $WARMUP_UPDATES --total-num-update $TOTAL_UPDATES     --dropout 0.1 --attention-dropout 0.1 --weight-decay 0.01     --max-sentences $MAX_SENTENCES --update-freq $UPDATE_FREQ     --max-update $TOTAL_UPDATES --log-format simple --log-interval 1     --save-dir $SAVE_DIR     --skip-invalid-size-inputs-valid-test     --patience 100     --no-epoch-checkpoints
+python fairseq/fairseq_cli/train.py --fp16 $DATA_DIR     --task masked_lm --criterion masked_lm     --arch roberta_med_small --sample-break-mode complete \
+--tokens-per-sample $TOKENS_PER_SAMPLE     --optimizer adam --adam-betas '(0.9,0.98)' --adam-eps 1e-6 --clip-norm 0.0     --lr-scheduler polynomial_decay \
+--lr $PEAK_LR --warmup-updates $WARMUP_UPDATES --total-num-update $TOTAL_UPDATES     --dropout 0.1 --attention-dropout 0.1 --weight-decay 0.01 \
+--max-sentences $MAX_SENTENCES --update-freq $UPDATE_FREQ     --max-update $TOTAL_UPDATES --log-format simple --log-interval 1     --save-dir $SAVE_DIR \
+--skip-invalid-size-inputs-valid-test     --patience 100     --no-epoch-checkpoints
 ```
 The commands above are suitable if you are running the job with 4 GPUs. If you are using more/fewer GPUs, make sure UPDATE_FREQ*#GPUs=32.
 
