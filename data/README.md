@@ -1,10 +1,10 @@
 # The MSGS datasets
 
-This directory contains descriptions and tutorials on MSGS datasets.
+This directory contains the MSGS datasets.
 
 ### MSGS
 
-The compressed file contains 29 tasks, of which 20 are binary classification of mixed signals and 9 are control tasks where signal only comes from one feature, linguistic or surface.
+The file ```msgs.zip'''  contains datasets for 29 binary classification tasks, of which 20 are ambiguous tasks 9 are unambiguous control tasks.
 
 feature type and corresponding names:
 
@@ -20,7 +20,7 @@ feature type and corresponding names:
 | Syn. construction (linguistic) | control_rasing|
 | Syn. position (linguistic) | main_verb |
 
-The file structure looks like the following:
+The file structure is as follows:
 ```
 msgs
 └─── [feature]_control/  (control task)
