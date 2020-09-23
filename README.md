@@ -42,7 +42,7 @@ For other hyperparameters, we select:
 
 #### An example of how to run the pretraining:
 
-To reproduce the pretraining of roberta-med-small-1M-1, use the following commands:
+Our pretraining code is based on Fairseq. To reproduce the pretraining of roberta-med-small-1M-1, use the following commands:
 ```
 PYTHONPATH=./fairseq
 
