@@ -1,5 +1,5 @@
 # Learning What Features Matter: RoBERTa acquires helpful inductive biases from pretraining
-The repository contains data, model implementations, and evaluation scripts for the paper [Learning What Features Matter: RoBERTa acquires helpful inductive biases from pretraining](tbd). The paper investigates how increases in pretraining data alters the inductive biases of RoBERTa when generalizing on downstream tasks. We pretrain models on 4 successively larger datasets, then test them on a synthetic dataset named Mixed Signals Generalization Set (MSGS).
+The repository contains data and links to model implementations and training/test code for the paper [Learning What Features Matter: RoBERTa acquires helpful inductive biases from pretraining](tbd). The paper investigates how increases in pretraining data alters the inductive biases of RoBERTa when generalizing on downstream tasks. We pretrain models on 4 successively larger datasets, then test them on a synthetic dataset named Mixed Signals Generalization Set (MSGS).
 
 Sections
 
@@ -28,7 +28,7 @@ Pretraining:
 | [roberta-med-small-1M-2][link-roberta-med-small-1M-2] | 1M | MED-SMALL | 10K | 512 | 134.18 |
 | [roberta-med-small-1M-3][link-roberta-med-small-1M-3] | 1M | MED-SMALL | 31K | 512 | 139.39 |
 
-Details on model sizes:
+Details on model sizes (see the paper for a full discussion of how we tune this hyperparameter):
 
 | Model Size | L  | AH | HS  | FFN  | P    |
 |------------|----|----|-----|------|------|
@@ -44,11 +44,11 @@ For other hyperparameters, we select:
 
 #### Analysis on Pretrained models
 
-We also analyzed our pretrained models with edge probing([Tenney et al., 2019](https://arxiv.org/pdf/1905.06316.pdf)). For edge probing details you can go to our post on CILVR blog: [The MiniBERTas: Testing what RoBERTa learns with varying amounts of pretraining](https://wp.nyu.edu/cilvr/2020/07/02/the-minibertas-testing-what-roberta-learns-with-varying-amounts-of-pretraining/).
+We have also analyzed our pretrained models with edge probing ([Tenney et al., 2019](https://arxiv.org/pdf/1905.06316.pdf)). For edge probing details you can go to our post on CILVR blog: [The MiniBERTas: Testing what RoBERTa learns with varying amounts of pretraining](https://wp.nyu.edu/cilvr/2020/07/02/the-minibertas-testing-what-roberta-learns-with-varying-amounts-of-pretraining/).
 
 ### Testing Inductive Biases with MSGS
 
-We create MSGS to test model generalization on inductive biases. MSGS contains 20 mixed binary classification tasks where the signal from each of the 4 linguistic features are mixed with signal from 5 surface features. We also provide 9 control tasks on the 9 features where the signal isn't mixed, to test whether models have learnt these features during pretraining.
+The MSGS dataset includes data for 29 binary classification tasks to test models' inductive biases. MSGS contains data for 20 ambiguous tasks obtained by combining one of 4 linguistic features with one of 5 surface features. We also provide data for 9 unambiguous control tasks for each of the 9 features.
 
 #### MSGS
 
@@ -88,7 +88,7 @@ For each mixed task we create 5k paradigms of data. paradigm example(Syn. positi
 
 (**L** <sup>**L**</sup> and **L** <sup>**S**</sup> mark the presence of the linguistic feature and surface feature respectively.)
 
-We use `Train` data for finetuning and `Test` data to test model generalization. We also add different proportions(0.1%, 0.3%, 1.0%) of `Inoc.` data to training data.
+We use `Train` data for finetuning and `Test` data to test model generalization. We also add different proportions (0.1%, 0.3%, 1.0%) of `Inoc.` data to training data.
 
 More details are provided in the [data page](https://github.com/nyu-mll/RoBERTa-scale-down/blob/master/data).
 
@@ -96,7 +96,9 @@ More details are provided in the [data page](https://github.com/nyu-mll/RoBERTa-
 
 #### How to Use Pretrained Models
 
-Load models with codes as in the example:
+The RoBERTa models pretrained on smaller datasets ("MiniBERTas") are available through [Hugging Face](https://huggingface.co/nyu-mll).
+
+You can load models as in the following example:
 
 ```python
 from transformers import AutoModel, AutoTokenizer
