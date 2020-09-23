@@ -4,7 +4,7 @@ This directory contains the MSGS datasets.
 
 ### MSGS
 
-The file ```msgs.zip'''  contains datasets for 29 binary classification tasks, of which 20 are ambiguous tasks 9 are unambiguous control tasks.
+The file ```msgs.zip```  contains datasets for 29 binary classification tasks, of which 20 are ambiguous tasks 9 are unambiguous control tasks.
 
 feature type and corresponding names:
 
