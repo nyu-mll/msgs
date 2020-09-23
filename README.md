@@ -9,9 +9,7 @@ Sections
 
 ### Pretraining RoBERTa
 
-We pretrain RoBERTa on smaller datasets(1M, 10M, 100M, 1B tokens). The pretraining data reproduces that of BERT: We combine English Wikipedia and a reproduction of BookCorpus using texts from smashwords in a ratio of approximately 3:1. We release 3 models with lowest perplexities for each pretraining data size out of 25 runs (or 10 in the case of 1B tokens).
-
-Pretraining:
+We pretrain RoBERTa on smaller datasets(1M, 10M, 100M, 1B tokens). The pretraining data reproduces that of BERT: We combine English Wikipedia and a reproduction of BookCorpus using texts from smashwords in a ratio of approximately 3:1. We release 3 models with lowest perplexities for each pretraining data size out of 25 runs (or 10 in the case of 1B tokens):
 
 | model | data | model size | max steps | batch size | val. ppl. |
 |-|-|-|-|-|-|
@@ -41,6 +39,27 @@ For other hyperparameters, we select:
 - Peak Learning rate: 5e-4
 - Warmup Steps: 6% of max #steps
 - Dropout: 0.1
+
+An example of how to run the pretraining:
+
+To reproduce the pretraining of roberta-med-small-1M-1, use the following commands:
+```
+PYTHONPATH=./fairseq
+
+TOKENS_PER_SAMPLE=512   # Max sequence length
+MAX_POSITIONS=512       # Num. positional embeddings (usually same as above)
+MAX_SENTENCES=16        # Number of sequences per batch (batch size)
+DATA_DIR=PATH/TO/YOUR/DATA/
+
+TOTAL_UPDATES=100000    # Total number of training steps
+WARMUP_UPDATES=6000     # Warmup the learning rate over this many updates
+PEAK_LR=0.0005        # Peak learning rate, adjust as needed
+UPDATE_FREQ=8          # Increase the batch size 8x
+SAVE_DIR=miniberta_1M_reproduce_checkpoints
+
+python fairseq/fairseq_cli/train.py --fp16 $DATA_DIR     --task masked_lm --criterion masked_lm     --arch roberta_med_small --sample-break-mode complete --tokens-per-sample $TOKENS_PER_SAMPLE     --optimizer adam --adam-betas '(0.9,0.98)' --adam-eps 1e-6 --clip-norm 0.0     --lr-scheduler polynomial_decay --lr $PEAK_LR --warmup-updates $WARMUP_UPDATES --total-num-update $TOTAL_UPDATES     --dropout 0.1 --attention-dropout 0.1 --weight-decay 0.01     --max-sentences $MAX_SENTENCES --update-freq $UPDATE_FREQ     --max-update $TOTAL_UPDATES --log-format simple --log-interval 1     --save-dir $SAVE_DIR     --skip-invalid-size-inputs-valid-test     --patience 100     --no-epoch-checkpoints
+```
+The commands above are suitable if you are running the job with 4 GPUs. If you are using more/fewer GPUs, make sure UPDATE_FREQ*#GPUs=32.
 
 #### Analysis on Pretrained models
 
