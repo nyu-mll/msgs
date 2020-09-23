@@ -23,10 +23,10 @@ feature type and corresponding names:
 The file structure is as follows:
 ```
 msgs
-└─── [feature]_control/  (control task)
+└─── [feature]_control/  (unambiguous control task)
 |   |   train.jsonl
 |   |   test.jsonl
-└─── [linguistic_feature]_[surface_feature]/  (mixed classification)
+└─── [linguistic_feature]_[surface_feature]/  (ambiguous task)
 |   |   train.jsonl
 |   |   test.jsonl
 |   |   inoculating.jsonl
