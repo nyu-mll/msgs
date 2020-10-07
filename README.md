@@ -1,15 +1,15 @@
-# Learning What Features Matter: RoBERTa acquires helpful inductive biases from pretraining
-The repository contains data and links to model implementations and training/test code for the paper [Learning What Features Matter: RoBERTa acquires helpful inductive biases from pretraining](tbd). The paper investigates how increases in pretraining data alters the inductive biases of RoBERTa when generalizing on downstream tasks. We pretrain models on 4 successively larger datasets, then test them on a synthetic dataset named Mixed Signals Generalization Set (MSGS).
+# Learning Which Features Matter: RoBERTa Acquires a Preference for Linguistic Generalizations
+The repository contains data and links to model implementations and training/test code for the paper [Learning Which Features Matter: RoBERTa Acquires a Preference for Linguistic Generalizations](tbd). The paper investigates how increases in pretraining data alters the inductive biases of RoBERTa when generalizing on downstream tasks. We pretrain models on 4 successively larger datasets, then test them on a synthetic dataset named Mixed Signals Generalization Set (MSGS).
 
 Sections
 
-- [Pretraining RoBERTa](https://github.com/nyu-mll/RoBERTa-scale-down#pretraining-roberta)
-- [Testing Inductive Biases](https://github.com/nyu-mll/RoBERTa-scale-down#testing-inductive-biases-with-msgs)
-- [Model and Finetuning Tutorials](https://github.com/nyu-mll/RoBERTa-scale-down#model-and-finetuning-tutorials)
+- [Pretraining RoBERTa](https://github.com/nyu-mll/msgs#pretraining-roberta)
+- [Testing Inductive Biases](https://github.com/nyu-mll/msgs#testing-inductive-biases-with-msgs)
+- [Model and Finetuning Tutorials](https://github.com/nyu-mll/msgs#model-and-finetuning-tutorials)
 
 ### Pretraining RoBERTa
 
-We pretrain RoBERTa on smaller datasets(1M, 10M, 100M, 1B tokens). The pretraining data reproduces that of BERT: We combine English Wikipedia and a reproduction of BookCorpus using texts from smashwords in a ratio of approximately 3:1. We release 3 models with lowest perplexities for each pretraining data size out of 25 runs (or 10 in the case of 1B tokens):
+We pretrain RoBERTa on smaller datasets (1M, 10M, 100M, 1B tokens). The pretraining data reproduces that of BERT: We combine English Wikipedia and a reproduction of BookCorpus using texts from smashwords in a ratio of approximately 3:1. We release 3 models with lowest perplexities for each pretraining data size out of 25 runs (or 10 in the case of 1B tokens):
 
 | model | data | model size | max steps | batch size | val. ppl. |
 |-|-|-|-|-|-|
@@ -75,7 +75,7 @@ The MSGS dataset includes data for 29 binary classification tasks to test models
 
 #### MSGS
 
-More details are provided in the [data page](https://github.com/nyu-mll/RoBERTa-scale-down/blob/master/data).
+More details are provided in the [data page](https://github.com/nyu-mll/msgs/blob/master/data).
 
 ### Model and Finetuning Tutorials
 
