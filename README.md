@@ -95,6 +95,8 @@ model = AutoModel.from_pretrained("nyu-mll/roberta-base-100M-1")
 
 You can use our [fork](https://github.com/leehaausing/transformers) of [transformers](https://github.com/huggingface/transformers) and run `./examples/run_msgs.py` in `inductive_bias` branch. An example is presented below:
 
+(Note: Currently data in the [data page](https://github.com/nyu-mll/msgs/blob/master/data) hasn't introduced inoculated data into training. You can still create a inoculated dataset as you like, or you can use access [this page](https://drive.google.com/file/d/1-B5L_-5AfssDfV67zUKsGhFTYJ9ECZkD/view?usp=sharing) to get the inoculated data. The version that you can use the data in this repo will be available soon.)
+
 ```
 python ./examples/run_msgs.py \
     --model_type roberta \
