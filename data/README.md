@@ -6,6 +6,8 @@ This directory contains the MSGS datasets.
 
 The file ```msgs.zip```  contains datasets for 29 binary classification tasks, of which 20 are ambiguous tasks 9 are unambiguous control tasks.
 
+(Note: This download doesn't include training sets that contain inoculation data. You can still create these inoculated datasets, or you can use access [this page](https://drive.google.com/file/d/1-B5L_-5AfssDfV67zUKsGhFTYJ9ECZkD/view?usp=sharing) to get the original inoculated data from the paper.)
+
 #### Schematic examples
 
 (surface features)
