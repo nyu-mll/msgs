@@ -37,7 +37,7 @@ Details on model sizes (see the paper for a full discussion of how we tune this 
 
 For other hyperparameters, we select:
 - Peak Learning rate: 5e-4
-- Warmup Steps: 6% of max #steps
+- Warmup Steps: 6% of maximum steps passing model to data batches.
 - Dropout: 0.1
 
 #### An example of how to run the pretraining:
