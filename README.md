@@ -1,5 +1,5 @@
 # Learning Which Features Matter: RoBERTa Acquires a Preference for Linguistic Generalizations
-The repository contains data and links to model implementations and training/test code for the paper [Learning Which Features Matter: RoBERTa Acquires a Preference for Linguistic Generalizations](tbd). The paper investigates how increases in pretraining data alters the inductive biases of RoBERTa when generalizing on downstream tasks. We pretrain models on 4 successively larger datasets, then test them on a synthetic dataset named Mixed Signals Generalization Set (MSGS).
+The repository contains data and links to model implementations and training/test code for the paper [Learning Which Features Matter: RoBERTa Acquires a Preference for Linguistic Generalizations](https://arxiv.org/abs/2010.05358). The paper investigates how increases in pretraining data alters the inductive biases of RoBERTa when generalizing on downstream tasks. We pretrain models on 4 successively larger datasets, then test them on a synthetic dataset named Mixed Signals Generalization Set (MSGS).
 
 Sections
 
@@ -141,7 +141,21 @@ python ./examples/run_msgs.py \
 
 ### Citing
 
-TBD.
+```
+@inproceedings{warstadt-etal-2020-learning,
+    title = "Learning Which Features Matter: RoBERTa Acquires a Preference for Linguistic Generalizations (Eventually)",
+    author = "Warstadt, Alex and
+	      Zhang, Yian and
+              Li, Haau-Sing and
+              Liu, Haokun and
+              Bowman, Samuel R",
+    booktitle = "Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing",
+    month = nov,
+    year = "2020",
+    address = "Punta Cana, Dominican Republic",
+    publisher = "Association for Computational Linguistics",
+}
+```
 
 [link-roberta-med-small-1M-1]: https://huggingface.co/nyu-mll/roberta-med-small-1M-1
 [link-roberta-med-small-1M-2]: https://huggingface.co/nyu-mll/roberta-med-small-1M-2
