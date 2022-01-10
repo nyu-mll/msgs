@@ -93,7 +93,7 @@ model = AutoModel.from_pretrained("nyu-mll/roberta-base-100M-1")
 
 #### Finetuning on MSGS
 
-You can use our [fork](https://github.com/nyu-mll/transformers) of [transformers](https://github.com/huggingface/transformers) and run `./examples/run_msgs.py` in `inductive_bias` branch. An example is presented below:
+You can use our [fork](https://github.com/nyu-mll/transformers) of [transformers](https://github.com/huggingface/transformers) and run `./examples/run_msgs.py` in `msgs` branch. An example is presented below:
 
 (Note: Currently data in the [data page](https://github.com/nyu-mll/msgs/blob/master/data) doesn't include training sets that contain inoculation data. You can still create these inoculated datasets, or you can use access [this page](https://drive.google.com/file/d/1-B5L_-5AfssDfV67zUKsGhFTYJ9ECZkD/view?usp=sharing) to get the original inoculated data from the paper.)
 
